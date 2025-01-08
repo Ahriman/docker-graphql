@@ -11,7 +11,7 @@ import { TodoModule } from './todo/todo.module';
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      // autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       playground: false,
       plugins: [
         ApolloServerPluginLandingPageLocalDefault(),  // Habilita la nueva página de documentación
