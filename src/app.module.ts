@@ -3,7 +3,7 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { HelloWorldModule } from './hello-world/hello-world.module';
-import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
+import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
 import { TodoModule } from './todo/todo.module';
 
 
@@ -14,7 +14,7 @@ import { TodoModule } from './todo/todo.module';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       playground: false,
       plugins: [
-        ApolloServerPluginLandingPageLocalDefault
+        ApolloServerPluginLandingPageLocalDefault(),  // Habilita la nueva página de documentación
       ]
     }),
     HelloWorldModule,
